@@ -1,13 +1,14 @@
-# Macbook ProRetina 2015 - Sleep Fix
+# Macbook Pro Retina 2015 Force Touch - Sleep Fix
 
 ### What is this tool?
 
 This tool is for people who bought the Macbook Pro 2015 retina with force touch
 and are having issues with the sleep feature. The computer will keep waking up
-frequently for reasons such as "ART", "Network". You can check if you have that
-issue by typing 
+frequently for reasons such as "ART" and "Network". You can check if you have that
+issue by typing the following command in the terminal and checking the log that is shown:
+```bash
 $ syslog | grep -i "Wake reason"
-in terminal and checking the log that is shown.
+```
 
 I had that problem and my notebook kept waking up literaly every minute,
 draining the battery a lot faster than it should. Some of the times, if
@@ -44,10 +45,15 @@ will overwrite the files you already care. Be warned.**
 
 To install it, open the terminal, go to the folder of the script and type:
 ```bash
-$ sh sleepfix install
+$ ./sleepfix install
 ```
 
 To remove it, type:
 ```bash
-$ sh sleepfix remove
+$ ./sleepfix remove
+```
+
+If you get an error when executing the sleepfix file such as permission denied, or file not executable, you might have to chmod the file. simply type the following command and it should work:
+```bash
+$ chmod u+x sleepfix
 ```
