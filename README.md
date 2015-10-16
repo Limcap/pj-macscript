@@ -4,10 +4,11 @@
 
 This tool is for people who bought the Macbook Pro 2015 retina with force touch
 and are having issues with the sleep feature. The computer will keep waking up
-frequently for reasons such as "ART", "Network". You can check if you have that
-issue by typing 
+frequently for reasons such as "ART" and "Network". You can check if you have that
+issue by typing the following command in the terminal and checking the log that is shown:
+```bash
 $ syslog | grep -i "Wake reason"
-in terminal and checking the log that is shown.
+```
 
 I had that problem and my notebook kept waking up literaly every minute,
 draining the battery a lot faster than it should. Some of the times, if
