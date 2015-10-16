@@ -20,7 +20,7 @@ then
 	launchctl unload /Library/LaunchAgents/sleepwatcher.plist
 	rm ~/.sleep
 	rm ~/.wakeup
-	rm ~/.wifion
+	rm ~/.wifioff
 	sudo rm /usr/local/sbin/sleepwatcher
 	sudo rm /usr/local/share/man/man8/sleepwatcher.8
 	sudo rm /Library/LaunchAgents/sleepwatcher.plist

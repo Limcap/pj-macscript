@@ -3,8 +3,8 @@ if [ ${#WIFI} -gt 0 ]
 then
 	echo "WiFi is ON"
 	networksetup -setairportpower en0 off;
-	echo 'Sleepwatcher token for WIFI ON. You can safely remove this file' > ~/.wifion
 else
 	echo "WiFi is OFF"
+	echo 'Sleepwatcher token for WIFI OFF. You can safely remove this file' > ~/.wifioff
 fi
 #unset WIFI

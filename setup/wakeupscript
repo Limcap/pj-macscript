@@ -1,6 +1,7 @@
 sleep 2;
-if [ -f ~/.wifion ]
+if [ ! -f ~/.wifioff ]
 then
-	networksetup -setairportpower en0 on;
-	rm ~/.wifion
+    networksetup -setairportpower en0 on;
+else
+    rm ~/.wifioff
 fi
