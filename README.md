@@ -1,4 +1,4 @@
-# Macbook ProRetina 2015 - Sleep Fix
+# Macbook Pro Retina 2015 w/ Force Touch - Sleep Fix
 
 ### What is this tool?
 
