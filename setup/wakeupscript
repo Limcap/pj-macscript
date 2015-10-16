@@ -1,0 +1,6 @@
+sleep 2;
+if [ -f ~/.wifion ]
+then
+	networksetup -setairportpower en0 on;
+	rm ~/.wifion
+fi

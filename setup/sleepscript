@@ -1,0 +1,10 @@
+WIFI=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | grep " SSID")
+if [ ${#WIFI} -gt 0 ]
+then
+	echo "WiFi is ON"
+	networksetup -setairportpower en0 off;
+	echo 'Sleepwatcher token for WIFI ON. You can safely remove this file' > ~/.wifion
+else
+	echo "WiFi is OFF"
+fi
+#unset WIFI

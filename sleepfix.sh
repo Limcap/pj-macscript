@@ -1,0 +1,65 @@
+#!/bin/sh
+
+# quit if any command fails
+set -e
+
+if [ -z "$1" ] ; then
+	echo "Error: No parameter. Use 'sleepfix install' or 'sleepfix remove'"
+	exit 1
+
+elif [ "$1" == "remove" ] || [ "$1" == "uninstall" ]
+then
+	echo
+	echo
+	echo "UNINSTALLING SLEEPWATCHER 2.2 WITH WI-FI SLEEP"
+	echo "This will remove all sleepwatcher files. including the user script."
+	echo "Press Enter to continue or Crtl+c to quit"
+	read
+
+	launchctl unload /Library/LaunchAgents/sleepwatcher.plist
+	rm ~/.sleep
+	rm ~/.wakeup
+	sudo rm /usr/local/sbin/sleepwatcher
+	sudo rm /usr/local/share/man/man8/sleepwatcher.8
+	sudo rm /Library/LaunchAgents/sleepwatcher.plist
+	sudo rm /etc rc.sleep
+	sudo rm /etc rc.wakeup
+	sudo rmdir /usr/local/sbin
+	sudo rmdir /usr/local/share/man/man8
+
+	echo "SLEEPFIX UNINSTALLED!"
+
+elif [ "$1" == "install" ]
+then 
+	if [ [ ! -f install.sh ] || [ ! -f sleepwatcher ] || [ ! -f sleepwatcher.8 ] || [ ! -f sleepscript ] || [ ! -f wakeupscript ] || [ ! -f config/sleepwatcher.plist ] || [ ! -f config/rc.sleep ] || [ ! -f config/rc.wakeup ] ]
+	then
+		echo
+		echo "INSTALLATION FILES NOT FOUND."
+		echo "Exiting..."
+		exit 1
+	else
+		echo
+		echo 
+		echo "INSTALLING SLEEPWATCHER 2.2 WITH WI-FI SLEEP"
+		echo "Press Enter to continue or Crtl+c to quit"
+		read
+
+		cp setup/sleepscript ~/.sleep
+		cp setup/wakeupscript ~/.wakeup
+
+		chmod u+x ~/.sleep
+		chmod u+x ~/.wakeup
+	
+		sudo mkdir -p /usr/local/sbin /usr/local/share/man/man8
+		sudo cp setup/sleepwatcher /usr/local/sbin
+		sudo cp setup/sleepwatcher.8 /usr/local/share/man/man8
+
+		#/usr/local/sbin/sleepwatcher --verbose --sleep ~/.sleep --wakeup ~/.wakeup
+		sudo cp setup/sleepwatcher.plist /Library/LaunchAgents/sleepwatcher.plist
+		sudo cp setup/rc.* /etc
+		launchctl load /Library/LaunchAgents/sleepwatcher.plist
+		launchctl unload /Library/LaunchAgents/sleepwatcher.plist
+
+		echo "IF NO ERRORS WERE FOUND, THEN INSTALLATION IS COMPLETE."
+	fi
+fi
