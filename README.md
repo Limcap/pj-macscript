@@ -1,6 +1,6 @@
-# MacbookPro2015SleepFix
+# Macbook ProRetina 2015 - Sleep Fix
 
-### 1 Should I use this script?
+### What is this tool?
 
 This tool is for people who bought the Macbook Pro 2015 retina with force touch
 and are having issues with the sleep feature. The computer will keep waking up
@@ -19,6 +19,8 @@ Even ater the OSx upgrade for the El Captain version this problem is still
 present. I found out that the best workaround is to turn the Airport off
 before putting the mackbook pro to sleep. Therefore I created this script
 that will automate this process.
+
+### Should I use it?
 
 If you have been experiencing similar issues, this tool will probably
 help you with it.
