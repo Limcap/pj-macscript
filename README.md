@@ -45,10 +45,10 @@ will overwrite the files you already care. Be warned.**
 
 To install it, open the terminal, go to the folder of the script and type:
 ```bash
-$ sh sleepfix install
+$ ./sleepfix install
 ```
 
 To remove it, type:
 ```bash
-$ sh sleepfix remove
+$ ./sleepfix remove
 ```
