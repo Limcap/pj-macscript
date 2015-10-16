@@ -26,7 +26,7 @@ If you have been experiencing similar issues, this tool will probably
 help you with it.
 
 
-### 2 How does it works?
+### How does it works?
 
 It will automatically turn off the airport from your notebook as soon as you
 put the computer to sleep, and will turn it on again when you wake it up,
@@ -40,7 +40,7 @@ the fix.
 **If you already have this tools installed in you macbook pro, this script
 will overwrite the files you already care. Be warned.** 
 
-### 3 Installation and Removal
+### Installation and Removal
 
 To install it, open the terminal, go to the folder of the script and type:
 ```bash
