@@ -52,3 +52,8 @@ To remove it, type:
 ```bash
 $ ./sleepfix remove
 ```
+
+If you get an error when executing the sleepfix file such as permission denied, or file not executable, you might have to chmod the file. simply type the following command and it should work:
+```bash
+$ chmod u+x sleepfix
+```
